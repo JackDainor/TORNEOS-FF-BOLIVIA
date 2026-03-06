@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TORNEOS FF • Torneos Free Fire Bolivia </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
+    :root {
+      --neon-orange: #ff6600;
+      --neon-red: #ff1e1e;
+    }
+    
+    .title-font { font-family: 'Press Start 2P', cursive; }
+    
+    .neon-text {
+      text-shadow: 0 0 8px var(--neon-orange), 0 0 16px var(--neon-red), 0 0 24px #000;
+    }
+    
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)), 
+                  url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat fixed;
+    }
+    
+    .card-glow {
+      transition: all 0.4s ease;
+    }
+    .card-glow:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px -10px rgba(255,102,0,0.5);
+    }
+    
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, var(--neon-orange), var(--neon-red));
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-orange-600/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 sm:h-20">
+        <div class="flex items-center gap-3">
+        
+
+<img src="logo.png" height="60px" width="60px" class="rounded-full">
+
+          <div>
+            <h1 class="title-font text-xl sm:text-2xl tracking-wider neon-text">TORNEOS FREE FIRE</h1>
+            <p class="text-xs text-orange-400 -mt-1">BOLIVIA</p>
+          </div>
+        </div>
+
+        <!-- Desktop menu -->
+        <div class="hidden md:flex items-center gap-6 lg:gap-10 uppercase text-sm lg:text-base tracking-wider">
+          <a href="#torneo-hoy" class="hover:text-orange-400 transition">Hoy</a>
+          <a href="#inscripcion" class="hover:text-orange-400 transition">Inscribirme</a>
+          <a href="#info" class="hover:text-orange-400 transition">Info</a>
+          <a href="#whatsapp" class="hover:text-orange-400 transition">Grupo</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="menu-btn" class="md:hidden text-3xl text-orange-400 focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <a href="#inscripcion" class="hidden sm:flex bg-orange-600 hover:bg-orange-700 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl font-bold text-sm transition">
+          <i class="fas fa-trophy mr-2"></i> INSCRIBIRME
+        </a>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 border-t border-orange-600/30">
+        <div class="px-4 py-6 flex flex-col gap-5 text-base uppercase tracking-wider">
+          <a href="#torneo-hoy" class="hover:text-orange-400">Torneo de Hoy</a>
+          <a href="#inscripcion" class="hover:text-orange-400">Inscripción</a>
+          <a href="#info" class="hover:text-orange-400">¿Primera vez?</a>
+          <a href="#whatsapp" class="hover:text-orange-400">Grupo WhatsApp</a>
+          <a href="#inscripcion" class="mt-3 bg-orange-600 hover:bg-orange-700 px-6 py-4 rounded-xl text-center font-bold">
+            Inscribirme ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero-bg min-h-screen flex items-center pt-20 sm:pt-24 pb-12 sm:pb-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div class="space-y-6 sm:space-y-8 text-center lg:text-left">
+          <div class="inline-block bg-orange-600/80 backdrop-blur-sm text-white text-xs sm:text-sm px-4 py-1.5 rounded-full font-bold tracking-widest animate-pulse mx-auto lg:mx-0">
+            HOY EN BOLIVIA
+          </div>
+          <h1 class="title-font text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight neon-text">
+            ¡EL TORNEO<br>MÁS ÉPICO<br>DE FREE FIRE!
+          </h1>
+          <p class="text-lg sm:text-xl text-zinc-300 max-w-xl mx-auto lg:mx-0">
+            Solo • Dúo • Escuadra • Premios en efectivo • ¡Solo los mejores sobreviven!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            <a href="#inscripcion" class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition transform hover:scale-105 shadow-lg">
+              <i class="fas fa-rocket"></i> INSCRIBIRME YA
+            </a>
+            <a href="#torneo-hoy" class="border-2 border-orange-500 hover:bg-orange-500/20 px-8 py-4 rounded-2xl font-bold text-lg transition">
+              Ver torneos de hoy
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Torneos de hoy -->
+  <section id="torneo-hoy" class="py-16 sm:py-20 lg:py-24 bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <h2 class="section-header text-3xl sm:text-4xl lg:text-5xl title-font text-center mb-10 sm:mb-16">TORNEOS DE HOY</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="torneos-container">
+        <!-- Generado por JS -->
+      </div>
+
+      <div id="no-torneo" class="hidden max-w-4xl mx-auto bg-zinc-900/70 rounded-3xl p-12 text-center border border-orange-500/30">
+        <p class="text-3xl sm:text-4xl text-orange-400 mb-4">¡Hoy no hay torneos programados!</p>
+        <p class="text-zinc-300 text-lg">Revisa el grupo de WhatsApp para anuncios de última hora 🔥</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inscripción -->
+  <section id="inscripcion" class="py-16 sm:py-20 lg:py-24 bg-black">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+      <h2 class="section-header text-3xl sm:text-4xl lg:text-5xl title-font text-center mb-12">INSCRIPCIÓN RÁPIDA</h2>
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <!-- Formulario -->
+        <div class="lg:col-span-7">
+          <form id="form-inscripcion" class="space-y-6 bg-zinc-900/50 p-6 sm:p-8 lg:p-10 rounded-3xl border border-orange-500/30">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm text-zinc-400 mb-2">Nombre completo</label>
+                <input id="nombre" type="text" required class="w-full bg-zinc-800 border border-zinc-700 focus:border-orange-500 rounded-xl px-5 py-4 outline-none transition">
+              </div>
+              <div>
+                <label class="block text-sm text-zinc-400 mb-2">Modalidad <span class="text-red-500">*</span></label>
+                <select id="modalidad" required class="w-full bg-zinc-800 border border-zinc-700 focus:border-orange-500 rounded-xl px-5 py-4 outline-none transition">
+                  <option value="">Selecciona modalidad</option>
+                  <!--<option value="Solo">Solo (Bs 3)</option>-->
+                  <option value="Dúo">Dúo (Bs 10)</option>
+                  <!-- <option value="Escuadra">Escuadra (Bs 20)</option>-->
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm text-zinc-400 mb-2">Nombre en Free Fire <span class="text-red-500">*</span></label>
+                <input id="ff-name" type="text" required class="w-full bg-zinc-800 border border-zinc-700 focus:border-orange-500 rounded-xl px-5 py-4 outline-none transition">
+              </div>
+              <div>
+                <label class="block text-sm text-zinc-400 mb-2">ID Free Fire (opcional)</label>
+                <input id="ff-id" type="text" class="w-full bg-zinc-800 border border-zinc-700 focus:border-orange-500 rounded-xl px-5 py-4 outline-none transition">
+              </div>
+            </div>
+
+            <div class="bg-zinc-800/70 border border-orange-500/40 rounded-2xl p-6 text-center">
+              <div class="text-2xl sm:text-3xl font-bold text-orange-400" id="precio-mostrar">Bs 0</div>
+              <div class="text-sm text-zinc-400 mt-1">Costo de inscripción</div>
+            </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 py-5 text-xl font-bold rounded-2xl hover:opacity-90 transition flex items-center justify-center gap-3">
+              <i class="fas fa-qrcode"></i> SIGUIENTE: VER QR
+            </button>
+          </form>
+        </div>
+
+        <!-- Paso pago (oculto al inicio) -->
+        <div id="pago-step" class="lg:col-span-5 hidden">
+          <div class="sticky top-24 bg-zinc-900 rounded-3xl p-6 sm:p-8 lg:p-10 border border-orange-500/40">
+            <div class="flex justify-between items-center mb-8">
+              <h3 class="text-2xl sm:text-3xl title-font">Paso 2: Paga y confirma</h3>
+              <button onclick="volverFormulario()" class="text-orange-400 hover:text-orange-300 flex items-center gap-2 text-sm sm:text-base">
+                <i class="fas fa-arrow-left"></i> Volver
+              </button>
+            </div>
+
+            <div class="bg-black rounded-2xl p-6 text-center mb-8 border border-zinc-700">
+              <div class="text-sm text-zinc-400 mb-4">ESCANEA PARA PAGAR</div>
+              <!-- CAMBIA ESTA URL POR TU QR REAL -->
+              <img src="QR.png" alt="QR Pago" class="mx-auto w-56 sm:w-64 h-56 sm:h-64 bg-white p-4 rounded-xl shadow-2xl">
+              <p class="mt-6 text-sm text-zinc-400">
+                Carlos Dainor Chambi Burgoa<br>
+                Paga el monto correspondiente<br>
+                <span class="text-orange-400 font-medium">Banco Sol | QR Instantáneo | Pasar comprobante </span>
+              </p>
+            </div>
+
+            <button onclick="enviarConfirmacion()" class="w-full bg-white text-black py-5 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 hover:bg-orange-300 transition">
+              <i class="fas fa-check-circle"></i> YA PAGUÉ – ENVIAR POR WHATSAPP
+            </button>
+
+            <p class="text-center text-xs text-zinc-500 mt-6">
+              Al presionar se abrirá WhatsApp con tus datos
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info para nuevos -->
+  <section id="info" class="py-16 sm:py-20 lg:py-24 bg-zinc-950">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+      <h2 class="section-header text-3xl sm:text-4xl lg:text-5xl title-font text-center mb-12">¿ES TU PRIMERA VEZ?</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+        <div class="bg-zinc-900 rounded-3xl p-6 sm:p-8 card-glow">
+          <div class="text-4xl mb-4">1️⃣</div>
+          <h3 class="text-xl font-bold mb-3">Elige modalidad e inscríbete</h3>
+          <p class="text-zinc-400">Llena tus datos en 30 segundos.</p>
+        </div>
+        <div class="bg-zinc-900 rounded-3xl p-6 sm:p-8 card-glow">
+          <div class="text-4xl mb-4">2️⃣</div>
+          <h3 class="text-xl font-bold mb-3">Paga por QR</h3>
+          <p class="text-zinc-400">Monto según modalidad (3–20 Bs).</p>
+        </div>
+        <div class="bg-zinc-900 rounded-3xl p-6 sm:p-8 card-glow">
+          <div class="text-4xl mb-4">3️⃣</div>
+          <h3 class="text-xl font-bold mb-3">Confirma por WhatsApp</h3>
+          <p class="text-zinc-400">Automático con tus datos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grupo WhatsApp -->
+  <section id="whatsapp" class="py-16 sm:py-20 lg:py-24 bg-black text-center">
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
+      <i class="fab fa-whatsapp text-8xl sm:text-9xl text-green-500 mb-8"></i>
+      <h2 class="title-font text-4xl sm:text-5xl mb-6">ÚNETE AL GRUPO OFICIAL</h2>
+      <p class="text-lg sm:text-xl text-zinc-300 mb-10 max-w-2xl mx-auto">
+        Anuncios en tiempo real, horarios, resultados y comunidad de jugadores.
+      </p>
+      <!-- CAMBIA POR TU ENLACE REAL DE GRUPO -->
+      <a href="https://chat.whatsapp.com/I2rLNsJ7J8WGIBKtMtQo5Z?mode=gi_t" target="_blank" 
+         class="inline-flex items-center gap-4 bg-green-600 hover:bg-green-700 px-10 py-5 rounded-2xl font-bold text-xl sm:text-2xl transition transform hover:scale-105">
+        <i class="fab fa-whatsapp text-4xl"></i> UNIRME AL GRUPO
+      </a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+<footer class="bg-zinc-950 border-t border-zinc-800/50 py-10 sm:py-12 mt-12">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+    <!-- Redes sociales -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 mb-8">
+      <a href="https://www.tiktok.com/@torneosjack" target="_blank" 
+         class="flex items-center gap-3 text-white hover:text-[#ee1d52] transition text-lg sm:text-xl font-medium">
+        <i class="fab fa-tiktok text-3xl sm:text-4xl"></i>
+        Sígueme en TikTok
+      </a>
+
+      <a href="https://wa.me/59175761732" target="_blank"
+         class="flex items-center gap-3 text-white hover:text-green-500 transition text-lg sm:text-xl font-medium">
+        <i class="fab fa-whatsapp text-3xl sm:text-4xl"></i>
+        ¿Tienes alguna duda? Contáctame al +591 75761732
+      </a>
+    </div>
+
+    <!-- Texto inferior -->
+    <div class="text-zinc-500 text-sm sm:text-base">
+      <p>TORNEOS FREE FIRE BOLIVIA © 2026 • Torneos de Free Fire Bolivia</p>
+      <p class="mt-2">Organizado por Carlos Dainor</p>
+    </div>
+  </div>
+</footer>
+  
+
+  <!-- Modal éxito -->
+  <div id="success-modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50 px-4">
+    <div class="bg-zinc-900 rounded-3xl max-w-md w-full p-8 sm:p-10 text-center">
+      <div class="text-6xl mb-6">🎉🔥</div>
+      <h3 class="text-3xl title-font mb-4">¡INSCRIPCIÓN ENVIADA!</h3>
+      <p class="text-zinc-300 mb-8">Te llegará confirmación por WhatsApp.<br>¡Prepárate para ganar!</p>
+      <button onclick="document.getElementById('success-modal').classList.add('hidden')" 
+              class="w-full py-4 bg-orange-600 rounded-2xl text-xl font-bold hover:bg-orange-700 transition">
+        VOLVER AL INICIO
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

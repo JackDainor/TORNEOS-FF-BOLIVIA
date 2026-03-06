@@ -1,0 +1,35 @@
+{
+  "tournaments": [
+    {
+      "date": "2026-03-06",
+      "modes": [
+        
+        {
+          "mode": "Dúo",
+          "title": "TORNEO DÚO",
+          "time": "22:30 PM",
+          "prize": "🥇 1° Lugar: 80Bs🥈 2° Lugar: 40 Bs  🥉 3° Lugar: 20 Bs  🏅 4° Lugar: 10 Bs ",
+          "rules": "🚫No se permite PC  |  ✅ Full móvil  |  ✅ Se permite revivir  |  ✅ Todo lo que brinde el juego está permitido",
+          "price": 10
+        }
+      
+      ]
+    },
+    {
+      "date": "2026-03-07",
+      "modes": [
+        {
+          "mode": "Solo",
+          "title": "TORNEO SOLO",
+          "time": "19:30",
+          "prize": "180 Bs",
+          "rules": "...",
+          "maxPlayers": 100,
+          "currentPlayers": 8,
+          "price": 15
+        }
+
+      ]
+    }
+  ]
+}
