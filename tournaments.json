@@ -1,16 +1,16 @@
 {
   "tournaments": [
     {
-      "date": "2026-03-07",
+      "date": "2026-03-08",
       "modes": [
         
         {
-          "mode": "Solo",
-          "title": "TORNEO SOLO",
-          "time": "20:30 PM",
-          "prize": "MIENTRAS MÁS KILLS HAGAS, MÁS DINERO GANARÁS. |. ☠️1 KILL = 4bs. |. ☠️2 KILLS = 8bs.  |. ☠️3 Kills = 12bs. |.☠️ 4 Kills = 16bs. |. Sin límites🔥🔥☠️☠️",
-          "rules": "🚫No se permite PC  |  ✅ Full móvil   |  ✅ Todo lo que brinde el juego está permitido",
-          "price": 5
+          "mode": "Duo",
+          "title": "TORNEO DÚO",
+          "time": "22:30 PM",
+          "prize": "🥇1° Lugar = 80bs. |. 2° Lugar = 40bs  |. 3° Lugar = 20bs  | 4° Lugar = 10bs",
+          "rules": "🚫No se permite PC  |  ✅ se vale revivir  |  ✅ Full móvil   |  ✅ Todo lo que brinde el juego está permitido",
+          "price": 10
         }
       
       ]
