@@ -1,6 +1,6 @@
 // Variables globales
 let datosInscripcion = {};
-const precios = { Solo: 5, Dúo: 10, Escuadra: 20 };
+const precios = { Solo: 3, Dúo: 10, Escuadra: 20 };
 
 // Elementos del DOM
 const jugadoresContainer = document.getElementById('jugadores-container');
@@ -196,3 +196,78 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (selectModalidad?.value) actualizarCamposJugadores();
 });
+
+// ================================================
+// RECARGA DE DIAMANTES
+// ================================================
+
+let datosRecarga = { cantidad: 0, precio: 0 };
+
+// Seleccionar paquete
+document.querySelectorAll('.paquete-diamantes').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.paquete-diamantes').forEach(b => b.classList.remove('border-yellow-500', 'border-2'));
+    btn.classList.add('border-yellow-500', 'border-2');
+    
+    datosRecarga.cantidad = parseInt(btn.dataset.cantidad);
+    datosRecarga.precio = parseInt(btn.dataset.precio);
+    
+    document.getElementById('resumen-recarga').textContent = `${datosRecarga.cantidad} Diamantes`;
+    document.getElementById('precio-recarga-mostrar').textContent = `Bs ${datosRecarga.precio}`;
+  });
+});
+
+// Submit formulario recarga
+const formRecarga = document.getElementById('form-recarga');
+if (formRecarga) {
+  formRecarga.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    const idJugador = document.getElementById('id-jugador-recarga')?.value.trim();
+    
+    if (!idJugador) {
+      alert("Ingresa el ID del jugador");
+      return;
+    }
+    
+    if (datosRecarga.cantidad === 0) {
+      alert("Selecciona un paquete de diamantes");
+      return;
+    }
+    
+    datosRecarga.idJugador = idJugador;
+    
+    // Mostrar resumen final
+    document.getElementById('resumen-final-recarga').innerHTML = `
+      <div class="text-xl font-bold text-yellow-400 mb-2">${datosRecarga.cantidad} Diamantes</div>
+      <div class="text-lg mb-2">ID: ${datosRecarga.idJugador}</div>
+      <div class="text-2xl font-bold text-orange-400">Total: Bs ${datosRecarga.precio}</div>
+    `;
+    
+    formRecarga.classList.add('hidden');
+    document.getElementById('pago-recarga-step').classList.remove('hidden');
+    document.getElementById('pago-recarga-step').scrollIntoView({ behavior: 'smooth' });
+  });
+}
+
+// Volver al formulario
+function volverFormularioRecarga() {
+  document.getElementById('form-recarga').classList.remove('hidden');
+  document.getElementById('pago-recarga-step').classList.add('hidden');
+}
+
+// Enviar por WhatsApp
+function enviarConfirmacionRecarga() {
+  const msg = 
+`¡Solicitud de recarga! 💎
+ID jugador: ${datosRecarga.idJugador}
+Cantidad: ${datosRecarga.cantidad} diamantes
+Total a pagar: Bs ${datosRecarga.precio}
+Pago realizado ✅`;
+
+  const url = `https://wa.me/59175761732?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+  
+  // Puedes mostrar el mismo modal de éxito o uno nuevo
+  document.getElementById('success-modal')?.classList.remove('hidden');
+}
