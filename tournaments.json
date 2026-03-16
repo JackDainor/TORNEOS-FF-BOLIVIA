@@ -1,18 +1,19 @@
 {
   "tournaments": [
     {
-      "date": "2026-03-10",
+      "date": "2026-03-16",
       "modes": [
         
         {
-          "mode": "Solo",
-          "title": "TORNEO SOLO",
-          "time": "21:30 PM",
-          "prize": "Premios por kill: 1 kill = 4bs.| 2 Kills = 8bs  | 3 Kills = 12bs  | sin límites... Si sacas booyah ganas 5bs extras ",
-          "rules": "🚫No se permite PC    |  ✅ Full móvil   |  ✅ Todo lo que brinde el juego está permitido",
-          "price": 5
+          "mode": "Dúo",
+          "title": "TORNEO DÚO",
+          "time": "23:00 PM",
+          "prize": "Premios:\n1er lugar: 80 Bs \n2do lugar: 40 Bs \n3er lugar: 20 Bs \n 4to lugar 10 bs",
+          "rules": "2 jugadores por equipo • Bermuda • Sin hacks • Mejor dupla gana + premios repartidos",
+          
+          "price": 10
         }
-      
+        
       ]
     }
   ]
