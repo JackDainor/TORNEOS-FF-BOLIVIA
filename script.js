@@ -1,6 +1,6 @@
 // Variables globales
 let datosInscripcion = {};
-const precios = { Solo: 5, Dúo: 10, Escuadra: 20 };
+const precios = { Solo: 3, Dúo: 10, Escuadra: 20 };
 
 // Elementos del DOM
 const jugadoresContainer = document.getElementById('jugadores-container');
@@ -198,10 +198,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ================================================
-// RECARGA DE DIAMANTES
+// RECARGA DE DIAMANTES (actualizado con Nombre FF)
 // ================================================
 
-let datosRecarga = { cantidad: 0, precio: 0 };
+let datosRecarga = { cantidad: 0, precio: 0, nombreFF: '', idJugador: '' };
 
 // Seleccionar paquete
 document.querySelectorAll('.paquete-diamantes').forEach(btn => {
@@ -223,23 +223,29 @@ if (formRecarga) {
   formRecarga.addEventListener('submit', e => {
     e.preventDefault();
     
+    const nombreFF = document.getElementById('nombre-ff-recarga')?.value.trim();
     const idJugador = document.getElementById('id-jugador-recarga')?.value.trim();
     
+    if (!nombreFF) {
+      alert("Ingresa tu Nombre en Free Fire");
+      return;
+    }
     if (!idJugador) {
       alert("Ingresa el ID del jugador");
       return;
     }
-    
     if (datosRecarga.cantidad === 0) {
       alert("Selecciona un paquete de diamantes");
       return;
     }
     
+    datosRecarga.nombreFF = nombreFF;
     datosRecarga.idJugador = idJugador;
     
     // Mostrar resumen final
     document.getElementById('resumen-final-recarga').innerHTML = `
       <div class="text-xl font-bold text-yellow-400 mb-2">${datosRecarga.cantidad} Diamantes</div>
+      <div class="text-lg mb-2">Nombre: ${datosRecarga.nombreFF}</div>
       <div class="text-lg mb-2">ID: ${datosRecarga.idJugador}</div>
       <div class="text-2xl font-bold text-orange-400">Total: Bs ${datosRecarga.precio}</div>
     `;
@@ -256,18 +262,18 @@ function volverFormularioRecarga() {
   document.getElementById('pago-recarga-step').classList.add('hidden');
 }
 
-// Enviar por WhatsApp
+// Enviar por WhatsApp (actualizado con nombre e ID)
 function enviarConfirmacionRecarga() {
-  const msg = 
-`¡Solicitud de recarga! 💎
+  const msg =
+    `¡Solicitud de recarga! 💎
+Nombre en Free Fire: ${datosRecarga.nombreFF}
 ID jugador: ${datosRecarga.idJugador}
 Cantidad: ${datosRecarga.cantidad} diamantes
 Total a pagar: Bs ${datosRecarga.precio}
 Pago realizado ✅`;
-
+  
   const url = `https://wa.me/59175761732?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
   
-  // Puedes mostrar el mismo modal de éxito o uno nuevo
   document.getElementById('success-modal')?.classList.remove('hidden');
 }
