@@ -3,17 +3,14 @@
     {
       "date": "2026-03-17",
       "modes": [
-        
         {
-          "mode": "Dúo",
-          "title": "TORNEO DÚO",
-          "time": "23:00 PM",
-          "prize": "Premios:\n1er lugar: 80 Bs \n2do lugar: 40 Bs \n3er lugar: 20 Bs \n 4to lugar 10 bs",
-          "rules": "2 jugadores por equipo • Bermuda • Sin hacks • Mejor dupla gana + premios repartidos",
-          
-          "price": 10
+          "mode": "Solo",
+          "title": "TORNEO SOLO",
+          "time": "21:30",
+          "prize": "Premios: 1 kill = 4bs | 2 kills = 8bs | 3 kills = 12bs | 4 kills = 16bs | Sin límites 🏆🔥",
+          "rules": "1 vs Todos • Bermuda • Sin hacks • más kills más dinero 🏆🔥", 
+          "price": 5
         }
-        
       ]
     }
   ]
