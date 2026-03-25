@@ -3,14 +3,16 @@
     {
       "date": "2026-03-17",
       "modes": [
-        {
+        
+          {
           "mode": "Solo",
           "title": "TORNEO SOLO",
-          "time": "21:30",
+          "time": "22:00 PM",
           "prize": "Premios: 1 kill = 3bs | 2 kills = 6bs | 3 kills = 9bs | 4 kills = 12bs | Sin límites 🏆🔥",
-          "rules": "1 vs Todos • Bermuda • Sin hacks • más kills más dinero 🏆🔥", 
+          "rules": "1 vs Todos • Bermuda • Sin hacks • más kills más dinero 🏆🔥",
           "price": 4
         }
+        
       ]
     }
   ]
