@@ -1,6 +1,6 @@
 // Variables globales
 let datosInscripcion = {};
-const precios = { Solo: 4, Dúo: 10, Escuadra: 20 };
+const precios = { Solo: 5, Dúo: 10, Dúo: 15 };
 
 // Elementos del DOM
 const jugadoresContainer = document.getElementById('jugadores-container');
